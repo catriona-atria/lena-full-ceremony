@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel+Decorative:wght@400&family=IM+Fell+English:ital@0;1&display=swap');
+
+  @page {
+    size: A4;
+    margin: 28mm 22mm;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #faf6ee;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: #2a1a00;
+    font-size: 12pt;
+    line-height: 1.6;
+  }
+
+  .border-outer {
+    border: 1pt solid #b8935a;
+    padding: 18pt 24pt;
+    min-height: 100%;
+    position: relative;
+  }
+
+  .border-inner {
+    border: 1pt solid rgba(184,147,90,0.4);
+    padding: 18pt 22pt;
+  }
+
+  .eyeSymbol { text-align: center; font-size: 20pt; letter-spacing: 8pt; margin-bottom: 8pt; color: #b8935a; }
+  .supertitle { text-align: center; font-family: 'Cinzel Decorative', Georgia, serif; font-size: 7pt; letter-spacing: 4pt; text-transform: uppercase; color: #8a6a3a; margin-bottom: 12pt; }
+  .title { text-align: center; font-family: 'Cinzel Decorative', Georgia, serif; font-size: 17pt; color: #2a1a00; line-height: 1.4; margin-bottom: 5pt; }
+  .title-sub { font-size: 11pt; opacity: 0.7; }
+  .subtitle { text-align: center; font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 13pt; color: #8a6a3a; margin-bottom: 18pt; }
+  .divider { text-align: center; color: #b8935a; font-size: 11pt; letter-spacing: 6pt; margin: 14pt 0; }
+
+  .preamble { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 11.5pt; color: #4a3820; text-align: center; line-height: 1.8; margin-bottom: 18pt; padding: 0 10pt; }
+
+  .section-heading { font-family: 'Cinzel Decorative', Georgia, serif; font-size: 7.5pt; letter-spacing: 3pt; text-transform: uppercase; color: #8a6a3a; text-align: center; margin: 20pt 0 14pt; }
+
+  .schedule-block { margin-bottom: 8pt; }
+  .time-label { font-family: 'Cinzel Decorative', Georgia, serif; font-size: 6.5pt; letter-spacing: 2pt; text-transform: uppercase; color: #b8935a; margin-bottom: 1pt; }
+  .schedule-title { font-size: 14pt; font-weight: 400; color: #2a1a00; margin-bottom: 2pt; }
+  .schedule-desc { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 10.5pt; color: #6a5030; line-height: 1.6; padding-left: 10pt; border-left: 0.5pt solid rgba(184,147,90,0.5); margin-left: 2pt; }
+
+  .mini-divider { text-align: center; color: #b8935a; font-size: 9pt; letter-spacing: 3pt; margin: 10pt 0; }
+
+  .egg-section { border: 0.75pt solid #b8935a; background: rgba(184,147,90,0.05); padding: 14pt 16pt; margin: 16pt 0; }
+  .egg-title { font-family: 'Cinzel Decorative', Georgia, serif; font-size: 7.5pt; letter-spacing: 3pt; text-transform: uppercase; color: #8a6a3a; text-align: center; margin-bottom: 10pt; }
+  .egg-intro { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 11pt; color: #4a3820; line-height: 1.75; margin-bottom: 10pt; text-align: center; }
+  .egg-contents { list-style: none; margin: 8pt 0; }
+  .egg-contents li { font-family: 'IM Fell English', Georgia, serif; font-size: 10.5pt; color: #4a3820; line-height: 1.7; padding: 2pt 0 2pt 14pt; position: relative; }
+  .egg-contents li::before { content: '✦'; position: absolute; left: 0; color: #b8935a; font-size: 7pt; top: 4pt; }
+  .egg-open { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 11pt; color: #4a3820; line-height: 1.75; margin-top: 10pt; border-top: 0.5pt solid rgba(184,147,90,0.35); padding-top: 10pt; }
+  .egg-open-label { font-style: normal; font-family: 'Cinzel Decorative', Georgia, serif; font-size: 6.5pt; letter-spacing: 2pt; color: #8a6a3a; display: block; margin-bottom: 4pt; }
+
+  .intention-box { border: 0.75pt solid #b8935a; padding: 12pt 16pt; margin: 16pt 0; background: rgba(184,147,90,0.05); text-align: center; }
+  .intention-text { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 11.5pt; color: #3a2810; line-height: 1.8; }
+
+  .rite-block { margin-bottom: 16pt; page-break-inside: avoid; }
+  .rite-label { font-family: 'Cinzel Decorative', Georgia, serif; font-size: 6pt; letter-spacing: 2.5pt; color: #b8935a; margin-bottom: 2pt; }
+  .rite-title { font-size: 15pt; font-weight: 300; color: #1a0f00; margin-bottom: 4pt; }
+  .rite-desc { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 10.5pt; color: #5a4020; line-height: 1.7; padding-left: 10pt; border-left: 0.5pt solid rgba(184,147,90,0.35); margin-left: 2pt; }
+  .rite-note { font-size: 9.5pt; color: #9a7040; margin-top: 4pt; padding-left: 10pt; margin-left: 2pt; font-family: 'IM Fell English', Georgia, serif; }
+
+  .sub-rite { margin: 8pt 0 8pt 10pt; padding-left: 10pt; border-left: 1.5pt solid rgba(184,147,90,0.3); }
+  .sub-rite-label { font-family: 'Cinzel Decorative', Georgia, serif; font-size: 6pt; letter-spacing: 2pt; color: #b8935a; margin-bottom: 3pt; }
+  .sub-rite-desc { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 10.5pt; color: #5a4020; line-height: 1.7; }
+
+  .roles-table { width: 100%; border-collapse: collapse; margin: 8pt 0; }
+  .roles-table td { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 10pt; color: #5a4020; padding: 4pt 6pt; border-bottom: 0.5pt solid rgba(184,147,90,0.2); vertical-align: top; line-height: 1.5; }
+  .roles-table td:first-child { font-family: 'Cinzel Decorative', Georgia, serif; font-style: normal; font-size: 6pt; letter-spacing: 1.5pt; color: #b8935a; white-space: nowrap; padding-right: 10pt; }
+
+  .two-col { display: flex; gap: 16pt; margin-top: 6pt; }
+  .col { flex: 1; }
+  .col-label { font-family: 'Cinzel Decorative', Georgia, serif; font-size: 6pt; letter-spacing: 2pt; color: #b8935a; margin-bottom: 4pt; }
+  .col-text { font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 10pt; color: #5a4020; line-height: 1.7; }
+
+  .closing { text-align: center; font-family: 'IM Fell English', Georgia, serif; font-style: italic; font-size: 11.5pt; color: #6a4a20; line-height: 1.9; margin-top: 8pt; }
+</style>
+</head>
+<body>
+<div class="border-outer">
+<div class="border-inner">
+
+  <div class="eyeSymbol">𓂀 &nbsp; 𓂀 &nbsp; 𓂀</div>
+  <div class="supertitle">A Gathering of Friends &nbsp;·&nbsp; An Act of Love</div>
+  <div class="title">The Great Luck Reversal<br><span class="title-sub">for Lena</span></div>
+  <div class="subtitle">A ceremony of banishing &amp; blessing</div>
+  <div class="divider">· · · ✦ · · ·</div>
+  <div class="preamble">
+    We gather not because we believe in bad luck,<br>
+    but because we believe in each other.<br>
+    Everything we can think of. Against the wall. All at once.
+  </div>
+
+  <div class="egg-section">
+    <div class="egg-title">The Vessel of Beginnings</div>
+    <div class="egg-intro">Before the ceremony begins, an egg is prepared — a vessel holding everything we are about to use. An egg is one of the oldest symbols of renewal, protection, and the unbroken potential of what is yet to come. It is cracked open only when we are ready to begin.</div>
+    <ul class="egg-contents">
+      <li>The <strong>evil eye necklace</strong> — to be placed around Lena's neck as the final act of protection</li>
+      <li>A length of <strong>red thread</strong> — to be tied at her wrist, knotted seven times with seven wishes</li>
+      <li>A piece of <strong>paper bearing the letter L</strong> — for Lena, and for the whole family she carries with her: Lena, Jim, Maya, and Dom</li>
+      <li>A small sprig of <strong>sage</strong> — a reminder that the clearing has already begun</li>
+    </ul>
+    <div class="egg-open">
+      <span class="egg-open-label">When to open it</span>
+      The egg is brought out at the start of the rites and placed in the centre of the circle, still whole. It is cracked open by Lena herself at the moment the rites begin — a deliberate breaking of the old and the beginning of the new. The items inside are laid out in front of her, ready to be used in turn as the ceremony unfolds.
+    </div>
+  </div>
+
+  <div class="section-heading">Order of the Afternoon</div>
+
+  <div class="schedule-block">
+    <div class="time-label">12:30 – 1:15 pm</div>
+    <div class="schedule-title">Arrival, Food &amp; Settling</div>
+    <div class="schedule-desc">Eat, drink, get comfortable. Set out the candles, salt solution, papers and pens, and the fire-safe dish. Open the windows slightly — the bad luck will need somewhere to go.</div>
+  </div>
+  <div class="mini-divider">· · ·</div>
+  <div class="schedule-block">
+    <div class="time-label">1:15 – 1:30 pm</div>
+    <div class="schedule-title">Preparing the Space</div>
+    <div class="schedule-desc">Dim the lights. Put the music on low. Gather everyone. Sit together in a circle. Take a breath. This is when it begins.</div>
+  </div>
+  <div class="mini-divider">· · ·</div>
+  <div class="schedule-block">
+    <div class="time-label">1:30 – 3:30 pm</div>
+    <div class="schedule-title">The Rites</div>
+    <div class="schedule-desc">Work through the ceremony below at whatever pace feels right. No rushing. Laughter is allowed — encouraged, even.</div>
+  </div>
+  <div class="mini-divider">· · ·</div>
+  <div class="schedule-block">
+    <div class="time-label">3:30 – 4:00 pm</div>
+    <div class="schedule-title">More Food, More Talking</div>
+    <div class="schedule-desc">The hard work is done. Eat more. Refill drinks. Admire how much better everything already feels.</div>
+  </div>
+
+  <div class="section-heading">Roles</div>
+  <div class="preamble" style="font-size:10.5pt; margin-bottom:10pt;">Everyone has something to hold, carry, or say. These are assigned before we begin.</div>
+  <table class="roles-table">
+    <tr><td>Officiant</td><td>Leads the whole ceremony — holds the thread of it from start to finish</td></tr>
+    <tr><td>Sage Carrier</td><td>Holds and carries the sage bundle through every room</td></tr>
+    <tr><td>Salt Bearer</td><td>Holds the bottle and sprinkles the salt solution at doorways and sills</td></tr>
+    <tr><td>Threshold Voice</td><td>Speaks the words at the salt perimeter: <em>"Nothing unwelcome crosses this threshold"</em></td></tr>
+    <tr><td>Fire Keeper</td><td>Manages the bowl and lights each paper as it is placed in</td></tr>
+    <tr><td>Candle — Lena</td><td>Lights the first candle and dedicates it: <em>"This flame is for Lena"</em></td></tr>
+    <tr><td>Candle — Family</td><td>Lights the second candle: <em>"This flame is for Lena, Jim, Maya, and Dom"</em></td></tr>
+    <tr><td>Candle — Circle</td><td>Lights the third candle: <em>"And this one is for all of us"</em></td></tr>
+    <tr><td>Thread Tier</td><td>Ties the red thread around Lena's wrist, knot by knot</td></tr>
+    <tr><td>Necklace Placer</td><td>Places the evil eye necklace around Lena's neck as the final act</td></tr>
+  </table>
+
+  <div class="section-heading">The Rites · In Order</div>
+
+  <div class="intention-box">
+    <div class="intention-text">
+      Cast out the bad first.<br>
+      Then call in the good.<br>
+      The candles come after — flames lit into a room already cleared.
+    </div>
+  </div>
+
+  <div class="rite-block">
+    <div class="rite-label">Banishing</div>
+    <div class="rite-title">🌿 Sage Smudging</div>
+    <div class="rite-desc">The Officiant opens the egg and invites Lena to crack it. The items inside are laid out in the centre of the circle. Then the Sage Carrier lights the bundle and leads everyone through each room — corners included — while the Officiant sets the intention aloud: <em>"We are clearing this home of everything that does not serve Lena."</em> The group responds: <em>"We are clearing this home."</em></div>
+    <div class="rite-note">Windows open before you begin. Move clockwise. Fan smoke into corners. Cover the smoke alarm in advance.</div>
+  </div>
+
+  <div class="rite-block">
+    <div class="rite-label">Sealing</div>
+    <div class="rite-title">🧂 Salt Solution Perimeter</div>
+    <div class="rite-desc">The Salt Bearer leads everyone around the home — along the outside if possible, or along interior windowsills and doorways — sprinkling salt solution as they go. When the circuit is complete, the Threshold Voice says: <em>"Nothing unwelcome crosses this threshold."</em> The circle echoes: <em>"Nothing unwelcome."</em></div>
+    <div class="rite-note">Salt is one of the oldest known protections. It doesn't care what you believe.</div>
+  </div>
+
+  <div class="rite-block">
+    <div class="rite-label">Release</div>
+    <div class="rite-title">🔥 Writing &amp; Burning</div>
+    <div class="rite-desc">Two rounds. Papers are private — what is written stays between the writer and the flame. Take as many slips as you need.</div>
+    <div class="sub-rite">
+      <div class="sub-rite-label">Round One · For Lena &amp; Her Family</div>
+      <div class="sub-rite-desc">The Officiant says: <em>"Write what you want gone for Lena and her family — a worry, a weight, a run of bad luck. Write as many as you like."</em> When everyone is ready, each person places their papers in the bowl one by one. The Fire Keeper lights each one. As each burns, everyone says together: <em>"Gone. Done. Over."</em></div>
+    </div>
+    <div class="sub-rite">
+      <div class="sub-rite-label">Round Two · For All of Us</div>
+      <div class="sub-rite-desc">The Officiant says: <em>"Now write anything any of us would like to leave behind today — for yourself, for someone else in this circle, for all of us. This bowl holds whatever we need it to."</em> Same process: papers placed, lit, burned. <em>"Gone. Done. Over."</em> The Officiant closes: <em>"It's done. The room is clear. Now we bring in the light."</em></div>
+    </div>
+    <div class="rite-note">Do this near an open window. The Fire Keeper keeps a damp cloth nearby.</div>
+  </div>
+
+  <div class="rite-block">
+    <div class="rite-label">Calling In</div>
+    <div class="rite-title">🕯️ Three Candles &amp; Spoken Intention</div>
+    <div class="rite-desc">Three candles are lit in sequence. The Candle — Lena bearer lights the first: <em>"This flame is for Lena."</em> The Candle — Family bearer lights the second: <em>"This flame is for Lena, Jim, Maya, and Dom."</em> The Candle — Circle bearer lights the third: <em>"And this one is for all of us."</em><br><br>Then the Officiant invites everyone to speak a wish or blessing aloud — for Lena, for the family, or for the group. Anyone who would rather hold their wish in silence is equally welcome to do so. Both land the same.</div>
+    <div class="rite-note">Go around the circle. A moment of quiet from someone is not opting out — it is a different form of the same act.</div>
+  </div>
+
+  <div class="rite-block">
+    <div class="rite-label">Binding</div>
+    <div class="rite-title">🧵 Red Thread</div>
+    <div class="rite-desc">The Thread Tier wraps the red thread around Lena's wrist and ties it seven times. As each knot is made, someone from the circle speaks a wish — for Lena, for Jim, for Maya, for Dom, and for the life they are building together. The thread is worn until it falls away on its own. When it does, the wishes are released into the world.</div>
+    <div class="rite-note">The last knot: <em>"The protection you wear, you carry home to all of them."</em></div>
+  </div>
+
+  <div class="rite-block">
+    <div class="rite-label">Protection</div>
+    <div class="rite-title">🧿 The Evil Eye</div>
+    <div class="rite-desc">The Necklace Placer puts the evil eye necklace around Lena's neck as the final act of the ceremony. It has already known care and intention. Now it holds hers.</div>
+    <div class="rite-note">Everyone says together: <em>"May every eye that wishes you harm look away."</em></div>
+  </div>
+
+  <div class="section-heading">Setting the Scene</div>
+  <div class="two-col">
+    <div class="col">
+      <div class="col-label">Music</div>
+      <div class="col-text">Something wordless and warm — Ólafur Arnalds, Nils Frahm, or search "ritual ambient" or "sacred feminine" playlists. No lyrics during the rites.</div>
+    </div>
+    <div class="col">
+      <div class="col-label">Lighting</div>
+      <div class="col-text">Candles, fairy lights, dimmed overheads. The space should feel like something is happening here.</div>
+    </div>
+    <div class="col">
+      <div class="col-label">Formation</div>
+      <div class="col-text">Sit in a circle for the rites — floor is ideal, with cushions and throws. Lena can sit in the centre or within the circle; wherever feels right.</div>
+    </div>
+  </div>
+
+  <div class="section-heading">What to Bring</div>
+  <div class="two-col">
+    <div class="col">
+      <div class="col-label">For the Ceremony</div>
+      <div class="col-text">Sage bundle · Salt solution in a small bottle · Red thread · Three candles + long matches · Plenty of paper scraps + pens · A metal bowl for burning · The evil eye necklace · The egg</div>
+    </div>
+    <div class="col">
+      <div class="col-label">For the Hosting</div>
+      <div class="col-text">Disposable plates &amp; cups · Napkins · A bin bag · Food and drink. Leave nothing behind that Lena has to deal with afterwards.</div>
+    </div>
+  </div>
+
+  <div class="divider" style="margin-top:20pt;">· · · ✦ · · ·</div>
+  <div class="closing">
+    There is nothing more powerful than friends<br>
+    who show up, who sit together in a circle,<br>
+    who say <em>we are here and we are trying everything.</em><br><br>
+    That is the real luck reversal.
+  </div>
+  <div class="divider">𓂀</div>
+
+</div>
+</div>
+</body>
+</html>
